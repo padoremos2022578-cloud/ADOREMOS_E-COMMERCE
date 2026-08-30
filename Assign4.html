@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> PaulShop - E-Commerce</title>
+    <link rel="stylesheet" href="As4.css">
+</head>
+
+<body>
+
+    
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">S</div>
+            <div>
+                <h2>PaulShop</h2>
+                <p>Online Store</p>
+            </div>
+        </div>
+
+        <nav class="menu">
+
+            <p class="menu-title">MAIN NAVIGATION</p>
+
+            <a href="#" class="menu-item active" onclick="showSection('home', this)">
+                <span>⌂</span>
+                <span>Home</span>
+            </a>
+
+            <a href="#" class="menu-item" onclick="showSection('products', this)">
+                <span>▣</span>
+                <span>Products</span>
+            </a>
+
+            <a href="#" class="menu-item" onclick="showSection('categories', this)">
+                <span>▦</span>
+                <span>Categories</span>
+            </a>
+
+
+            <p class="menu-title">SHOPPING</p>
+
+            <a href="#" class="menu-item" onclick="showSection('cart', this)">
+                <span>🛒</span>
+                <span>Cart</span>
+                <span class="cart-count" id="cartCount">0</span>
+            </a>
+
+            <a href="#" class="menu-item" onclick="showSection('orders', this)">
+                <span>▤</span>
+                <span>My Orders</span>
+            </a>
+
+            <a href="#" class="menu-item" onclick="showSection('wishlist', this)">
+                <span>♡</span>
+                <span>Wishlist</span>
+            </a>
+
+
+            <p class="menu-title">ACCOUNT</p>
+
+            <a href="#" class="menu-item" onclick="showSection('profile', this)">
+                <span>♙</span>
+                <span>Profile</span>
+            </a>
+
+            <a href="#" class="menu-item" onclick="showSection('settings', this)">
+                <span>⚙</span>
+                <span>Settings</span>
+            </a>
+
+
+            <p class="menu-title">SYSTEM</p>
+
+            <a href="#" class="menu-item" onclick="showSection('logout', this)">
+                <span>⇥</span>
+                <span>Logout</span>
+            </a>
+
+        </nav>
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1 id="pageTitle">Welcome to PaulShop</h1>
+                <p>Your simple and convenient online shopping website.</p>
+            </div>
+
+            <div class="user-info">
+                <div class="user-avatar">JD</div>
+                <div>
+                    <strong>Juan Dela Cruz</strong>
+                    <small>Customer</small>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- HOME -->
+        <section id="home" class="content-section active-section">
+
+            <div class="welcome-card">
+                <div>
+                    <span class="badge">NEW ARRIVALS</span>
+                    <h2>Welcome to PaulShop!</h2>
+                    <p>
+                        Discover quality products at affordable prices.
+                        Shop your favorite items easily and conveniently.
+                    </p>
+
+                    <button class="primary-btn"
+                        onclick="showSection('products', document.querySelectorAll('.menu-item')[1])">
+                        Shop Now
+                    </button>
+                </div>
+
+                <div class="welcome-icon">🛍️</div>
+            </div>
+
+
+            <h2 class="section-title">Featured Products</h2>
+
+            <div class="product-grid">
+
+                <div class="product-card">
+                    <div class="product-image">🎧</div>
+                    <h3>Wireless Headphones</h3>
+                    <p>Comfortable headphones with clear sound.</p>
+                    <strong>₱1,499</strong>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">⌚</div>
+                    <h3>Smart Watch</h3>
+                    <p>Track your activities and notifications.</p>
+                    <strong>₱2,499</strong>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">🎒</div>
+                    <h3>Travel Backpack</h3>
+                    <p>Durable backpack for school and travel.</p>
+                    <strong>₱899</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUCTS -->
+        <section id="products" class="content-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Products</h2>
+                    <p>Browse our available products.</p>
+                </div>
+            </div>
+
+            <div class="product-grid">
+
+                <div class="product-card">
+                    <div class="product-image">🎧</div>
+                    <h3>Wireless Headphones</h3>
+                    <p>High-quality wireless headphones.</p>
+                    <div class="product-bottom">
+                        <strong>₱1,499</strong>
+                        <button class="small-btn" onclick="addToCart('Wireless Headphones', 1499)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="product-card">
+                    <div class="product-image">⌚</div>
+                    <h3>Smart Watch</h3>
+                    <p>Modern smartwatch for everyday use.</p>
+                    <div class="product-bottom">
+                        <strong>₱2,499</strong>
+                        <button class="small-btn" onclick="addToCart('Smart Watch', 2499)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="product-card">
+                    <div class="product-image">🎒</div>
+                    <h3>Travel Backpack</h3>
+                    <p>Strong and comfortable travel backpack.</p>
+                    <div class="product-bottom">
+                        <strong>₱899</strong>
+                        <button class="small-btn" onclick="addToCart('Travel Backpack', 899)">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CATEGORIES -->
+        <section id="categories" class="content-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Categories</h2>
+                    <p>Choose a category to find your favorite products.</p>
+                </div>
+            </div>
+
+            <div class="category-grid">
+
+                <div class="category-card">
+                    <div class="category-icon">💻</div>
+                    <h3>Electronics</h3>
+                    <p>
+                        Find headphones, smart watches, gadgets,
+                        and other electronic products.
+                    </p>
+                    <button class="outline-btn">View Products</button>
+                </div>
+
+
+                <div class="category-card">
+                    <div class="category-icon">👕</div>
+                    <h3>Fashion</h3>
+                    <p>
+                        Explore clothing, accessories,
+                        and fashionable everyday items.
+                    </p>
+                    <button class="outline-btn">View Products</button>
+                </div>
+
+
+                <div class="category-card">
+                    <div class="category-icon">🏠</div>
+                    <h3>Home & Living</h3>
+                    <p>
+                        Discover useful products for your
+                        home and everyday lifestyle.
+                    </p>
+                    <button class="outline-btn">View Products</button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CART -->
+        <section id="cart" class="content-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Shopping Cart</h2>
+                    <p>Review the items in your cart.</p>
+                </div>
+            </div>
+
+            <div class="cart-box">
+
+                <div class="cart-item">
+
+                    <div class="cart-product">
+                        <div class="cart-image">🎧</div>
+
+                        <div>
+                            <h3>Wireless Headphones</h3>
+                            <p>Quantity: 1</p>
+                        </div>
+                    </div>
+
+                    <strong>₱1,499</strong>
+
+                </div>
+
+
+                <div class="cart-summary">
+
+                    <div>
+                        <span>Total Amount</span>
+                        <strong id="cartTotal">₱1,499</strong>
+                    </div>
+
+                    <button class="primary-btn" onclick="checkout()">
+                        Checkout
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MY ORDERS -->
+        <section id="orders" class="content-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>My Orders</h2>
+                    <p>View your recent orders and their status.</p>
+                </div>
+            </div>
+
+            <div class="orders-box">
+
+                <div class="order-item">
+                    <div>
+                        <small>ORDER #1001</small>
+                        <h3>Wireless Headphones</h3>
+                    </div>
+
+                    <span class="status delivered">Delivered</span>
+
+                    <strong>₱1,499</strong>
+                </div>
+
+
+                <div class="order-item">
+                    <div>
+                        <small>ORDER #1002</small>
+                        <h3>Smart Watch</h3>
+                    </div>
+
+                    <span class="status shipping">Shipping</span>
+
+                    <strong>₱2,499</strong>
+                </div>
+
+
+                <div class="order-item">
+                    <div>
+                        <small>ORDER #1003</small>
+                        <h3>Travel Backpack</h3>
+                    </div>
+
+                    <span class="status processing">Processing</span>
+
+                    <strong>₱899</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- WISHLIST -->
+        <section id="wishlist" class="content-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Wishlist</h2>
+                    <p>Products you have saved for later.</p>
+                </div>
+            </div>
+
+            <div class="wishlist-grid">
+
+                <div class="wishlist-card">
+                    <div class="wishlist-image">📱</div>
+                    <h3>Smartphone</h3>
+                    <p>Modern smartphone with useful features.</p>
+                    <strong>₱8,999</strong>
+                    <button class="small-btn"
+                        onclick="addToCart('Smartphone', 8999)">
+                        Move to Cart
+                    </button>
+                </div>
+
+
+                <div class="wishlist-card">
+                    <div class="wishlist-image">👟</div>
+                    <h3>Running Shoes</h3>
+                    <p>Comfortable shoes for everyday activities.</p>
+                    <strong>₱1,999</strong>
+                    <button class="small-btn"
+                        onclick="addToCart('Running Shoes', 1999)">
+                        Move to Cart
+                    </button>
+                </div>
+
+
+                <div class="wishlist-card">
+                    <div class="wishlist-image">🎮</div>
+                    <h3>Game Controller</h3>
+                    <p>Controller for an enjoyable gaming experience.</p>
+                    <strong>₱1,299</strong>
+                    <button class="small-btn"
+                        onclick="addToCart('Game Controller', 1299)">
+                        Move to Cart
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROFILE -->
+        <section id="profile" class="content-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>My Profile</h2>
+                    <p>View your account information.</p>
+                </div>
+            </div>
+
+            <div class="profile-card">
+
+                <div class="large-avatar">JD</div>
+
+                <div class="profile-details">
+
+                    <div class="detail">
+                        <span>Name</span>
+                        <strong>Juan Dela Cruz</strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>Email</span>
+                        <strong>juan@example.com</strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>Course</span>
+                        <strong>Bachelor of Science in Information Technology</strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>Year Level</span>
+                        <strong>2nd Year</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SETTINGS -->
+        <section id="settings" class="content-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Settings</h2>
+                    <p>Manage your account preferences.</p>
+                </div>
+            </div>
+
+            <div class="settings-box">
+
+                <div class="setting-item">
+                    <div>
+                        <h3>Account Settings</h3>
+                        <p>Manage your account information and password.</p>
+                    </div>
+
+                    <button class="outline-btn">Manage</button>
+                </div>
+
+
+                <div class="setting-item">
+                    <div>
+                        <h3>Privacy Settings</h3>
+                        <p>Control your privacy and account visibility.</p>
+                    </div>
+
+                    <button class="outline-btn">Manage</button>
+                </div>
+
+
+                <div class="setting-item">
+                    <div>
+                        <h3>Notification Settings</h3>
+                        <p>Choose which notifications you want to receive.</p>
+                    </div>
+
+                    <button class="outline-btn">Manage</button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LOGOUT -->
+        <section id="logout" class="content-section">
+
+            <div class="logout-card">
+
+                <div class="logout-icon">⇥</div>
+
+                <h2>Logout</h2>
+
+                <p>
+                    This page represents the logout section of the website.
+                    You can use the button below to log out of your account.
+                </p>
+
+                <button class="logout-btn" onclick="logout()">
+                    Logout
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            <p>© 2026 PaulShop. All Rights Reserved.</p>
+        </footer>
+
+    </main>
+
+
+    <script src="Asc4.js"></script>
+
+</body>
+</html>
