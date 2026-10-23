@@ -1,0 +1,10 @@
+{
+  "description": "Transform your online experience with customizable themes, enhancing engagement and personalization for gamers and enthusiasts alike.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
